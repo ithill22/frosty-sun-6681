@@ -71,3 +71,32 @@ RSpec.configure do |config|
     end
   end
 end
+
+def test_data
+  @hospital1 = Hospital.create!(name: 'Grey Sloan Memorial Hospital')
+  @hospital2 = Hospital.create!(name: 'Pacific Northwest General Hospital')
+
+  @doctor1 = @hospital1.doctors.create!(name: 'Meredith Grey', specialty: 'General Surgery', university: 'Harvard University')
+  @doctor2 = @hospital1.doctors.create!(name: 'Alex Karev', specialty: 'Pediatric Surgery', university: 'Johns Hopkins University')
+  @doctor3 = @hospital2.doctors.create!(name: 'Miranda Bailey', specialty: 'General Surgery', university: 'Stanford University')
+  @doctor4 = @hospital2.doctors.create!(name: 'Derek McDreamy Shepherd', specialty: 'Attending Surgeon', university: 'University of Pennsylvania')
+
+  @patient1 = Patient.create!(name: 'Katie Bryce', age: 24)
+  @patient2 = Patient.create!(name: 'Denny Duquette', age: 39)
+  @patient3 = Patient.create!(name: 'Rebecca Pope', age: 32)
+  @patient4 = Patient.create!(name: 'Zola Shepherd', age: 2)
+  @patient5 = Patient.create!(name: 'Meredith Grey', age: 16)
+
+  @doctor_patient1 = DoctorPatient.create!(doctor: @doctor1, patient: @patient1)
+  @doctor_patient2 = DoctorPatient.create!(doctor: @doctor1, patient: @patient2)
+  @doctor_patient3 = DoctorPatient.create!(doctor: @doctor1, patient: @patient3)
+  @doctor_patient4 = DoctorPatient.create!(doctor: @doctor2, patient: @patient1)
+  @doctor_patient5 = DoctorPatient.create!(doctor: @doctor2, patient: @patient4)
+  @doctor_patient6 = DoctorPatient.create!(doctor: @doctor3, patient: @patient2)
+  @doctor_patient7 = DoctorPatient.create!(doctor: @doctor3, patient: @patient3)
+  @doctor_patient8 = DoctorPatient.create!(doctor: @doctor4, patient: @patient5)
+  @doctor_patient9 = DoctorPatient.create!(doctor: @doctor4, patient: @patient4)
+  @doctor_patient10 = DoctorPatient.create!(doctor: @doctor4, patient: @patient1)
+  @doctor_patient11 = DoctorPatient.create!(doctor: @doctor4, patient: @patient2)
+  @doctor_patient12 = DoctorPatient.create!(doctor: @doctor4, patient: @patient3)
+end
