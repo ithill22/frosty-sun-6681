@@ -74,7 +74,7 @@ end
 
 def test_data
   @hospital1 = Hospital.create!(name: 'Grey Sloan Memorial Hospital')
-  @hospital2 = Hospital.create!(name: 'Pacific Northwest General Hospital')
+  @hospital2 = Hospital.create!(name: 'Seaside Health & Wellness Center')
 
   @doctor1 = @hospital1.doctors.create!(name: 'Meredith Grey', specialty: 'General Surgery', university: 'Harvard University')
   @doctor2 = @hospital1.doctors.create!(name: 'Alex Karev', specialty: 'Pediatric Surgery', university: 'Johns Hopkins University')
