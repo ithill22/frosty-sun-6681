@@ -1,0 +1,6 @@
+<h1>Patients</h1>
+<ul id="patients-list">
+  <% @patients.adults_az.each do |patient| %>
+    <li id="patient-<%= patient.id %>"><%= patient.name %></li>
+  <% end %>
+</ul>
